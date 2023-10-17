@@ -1,4 +1,4 @@
-const menuSaludables = {
+const MENU_SALUDABLES = {
     vegetariano: [
         { nombre: "Ensalada de quinoa", ingredientes: ["Quinoa", "Tomate", "Lechuga", "Palta"] },
         { nombre: "Tacos de palta", ingredientes: ["Palta", "Tomate", "Cilantro", "Tortillas de maíz"] },
@@ -21,22 +21,23 @@ const menuSaludables = {
     ]
 };
 
-// Bienvenida
-alert("Bienvenido a su asesor de comida")
+function EjecutarAsesor() {
+    // Bienvenida
+    alert("Bienvenido a su asesor de comida")
 
-let respuesta;
+    let respuesta;
 
-do {
+    do {
+        const comida = obtenerComidaPorPreferencia()
 
-    const comida = obtenerComidaPorPreferencia()
+        alert(`El menu para usted es '${comida.nombre}'.`)
 
-    alert(`El menu para usted es '${comida.nombre}'.`)
+        //          true o false
+        respuesta = confirm("¿necesitas otra receta?")
+    } while (respuesta) // (respuesta) === true
 
-    //          true o false
-    respuesta = confirm("¿necesitas otra receta?")
-} while (respuesta) // (respuesta) === true
-
-alert("¡Gracias por usar el Asesor de Comida!");
+    alert("¡Gracias por usar el Asesor de Comida!");
+}
 
 function obtenerComidaPorPreferencia() {
     let opcion = prompt(
@@ -44,23 +45,13 @@ function obtenerComidaPorPreferencia() {
         "vegano"
     ).toLowerCase();
 
-    const menus = menuSaludables[opcion] || menuSaludables.otro;
-
-    // quiere seleccionar ingredientes?
-    // const listIngredientes = ingredientes.listarIngredientes()
-    // alert(`${listIngredientes}`)
+    const menus = MENU_SALUDABLES[opcion] || MENU_SALUDABLES.otro;
     const aceptar = confirm("¿quiere ver los ingredientes?")
     if (aceptar === true) {
-        console.log("ok")
 
-        const listaIngredientes = []; // nueva lista, almacenara todos los ingredientes
-        for (let menu of menus) { // menu es mi objeto
-            for (let ingrediente of menu.ingredientes) {
-                listaIngredientes.push(ingrediente)
-            }
-        }
-
+        const listaIngredientes = menus.flatMap(menu => menu.ingredientes);
         const listaIngredienteUnique = [...new Set(listaIngredientes)]
+        
         // mostrar lista
         const peticion = "Estos son algunos de los ingrediente, por favor seleccion alguno"
         const listaParaMostrar = []
@@ -74,21 +65,9 @@ function obtenerComidaPorPreferencia() {
         const opcionValida = parseInt(opcionIngrediente) <= listaIngredienteUnique.length
         if (opcionValida) {
             const ingredienteSeleccionado = listaIngredienteUnique[parseInt(opcionIngrediente) - 1]
-            let menuBuscado;
-            for (const menu of menus) {
-                if (!menuBuscado) {
-                    for (const ingrediente of menu.ingredientes) {
-                        if (ingredienteSeleccionado.toLowerCase() === ingrediente.toLowerCase()) {
-                            menuBuscado = menu;
-                            break
-                        }
-                    }
-                } else {
-                    break;
-                }
-            }
+            let menu = menus.find(m => m.ingredientes.some(ingre => ingredienteSeleccionado.toLowerCase() === ingre.toLowerCase()))
 
-            return menuBuscado;
+            return menu;
         } else {
             alert("Opcion no valida.")
             const indiceAleatorio = Math.floor(Math.random() * menus.length);
@@ -100,3 +79,4 @@ function obtenerComidaPorPreferencia() {
     return menus[indiceAleatorio];
 }
 
+EjecutarAsesor();
