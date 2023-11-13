@@ -1,0 +1,130 @@
+{
+    "vegetarian": {
+        "nameEsp": "Vegetariano",
+        "menus": [
+            {
+                "name": "Ensalada de quinoa",
+                "ingredients": [
+                    "Quinoa",
+                    "Tomate",
+                    "Lechuga",
+                    "Palta"
+                ]
+            },
+            {
+                "name": "Tacos de palta",
+                "ingredients": [
+                    "Palta",
+                    "Tomate",
+                    "Cilantro",
+                    "Tortillas de maíz"
+                ]
+            },
+            {
+                "name": "Wraps de vegetales",
+                "ingredients": [
+                    "Espinacas",
+                    "Zanahoria",
+                    "Tomate",
+                    "Hummus"
+                ]
+            }
+        ]
+    },
+    "vegan": {
+        "nameEsp": "Vegano",
+        "menus": [
+            {
+                "name": "Ensalada de quinoa",
+                "ingredients": [
+                    "Quinoa",
+                    "Tomate",
+                    "Lechuga",
+                    "Palta"
+                ]
+            },
+            {
+                "name": "Tacos de palta",
+                "ingredients": [
+                    "Palta",
+                    "Tomate",
+                    "Cilantro",
+                    "Tortillas de maíz"
+                ]
+            },
+            {
+                "name": "Wraps de vegetales",
+                "ingredients": [
+                    "Espinacas",
+                    "Zanahoria",
+                    "Tomate",
+                    "Hummus"
+                ]
+            }
+        ]
+    },
+    "carnivore": {
+        "nameEsp": "Carnivoro",
+        "menus": [
+            {
+                "name": "Pechuga de pollo a la parrilla",
+                "ingredients": [
+                    "Pechuga de pollo",
+                    "Limón",
+                    "Ajo",
+                    "Especias"
+                ]
+            },
+            {
+                "name": "Filete de salmón",
+                "ingredients": [
+                    "Filete de salmón",
+                    "Limón",
+                    "Eneldo",
+                    "Aceite de oliva"
+                ]
+            },
+            {
+                "name": "Hamburguesa de ternera",
+                "ingredients": [
+                    "Carne de ternera",
+                    "Pan de hamburguesa",
+                    "Lechuga",
+                    "Tomate"
+                ]
+            }
+        ]
+    },
+    "other": {
+        "nameEsp": "Otro",
+        "menus": [
+            {
+                "name": "Sopa de lentejas con espinacas",
+                "ingredients": [
+                    "Lentejas",
+                    "Espinacas",
+                    "Zanahoria",
+                    "Cebolla"
+                ]
+            },
+            {
+                "name": "Ensalada César",
+                "ingredients": [
+                    "Lechuga romana",
+                    "Pollo",
+                    "Queso parmesano",
+                    "Aderezo César"
+                ]
+            },
+            {
+                "name": "Arroz con verduras",
+                "ingredients": [
+                    "Arroz",
+                    "Zanahoria",
+                    "Choclo",
+                    "Pimiento"
+                ]
+            }
+        ]
+    }
+}

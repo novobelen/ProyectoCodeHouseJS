@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Grotesk&display=swap');
+
+:root {
+  --font-1: 'Space Grotesk', sans-serif;
+  --font-2: 'Montserrat', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font: normal small-caps bold 12px/30px var(--font-1);
+}
+
+p,
+span,
+a {
+  font: 1.5rem var(--font-2);
+}
+
+.f-title {
+  font-family: var(--font-1);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  display: grid;
+
+  grid-template-columns: minmax(50px, 1fr) 10fr minmax(50px, 1fr);
+  grid-template-rows: 1fr 8fr 1fr;
+  /* grid-template-areas:
+    "navbar navbar navbar"
+    "content content content"
+    "footer footer footer"; */
+  /* height: 100vh; */
+
+  background-color: #FAFAFA;
+
+}
+
+header,
+footer,
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+header {
+  /* grid-area: navbar; */
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+main {
+  /* grid-area: content; */
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  >section {
+    display: block;
+    width: 100%;
+  }
+}
+
+footer {
+  /* grid-area: footer; */
+  grid-area: 3 / 2 / 3 / 3;
+  margin-top: 2rem;
+}
+
+.navbar {
+  height: 6.25rem;
+
+  >.navbar-brand {
+    align-items: center;
+
+    >.title {
+      margin-left: 5rem;
+    }
+  }
+}
+
+.gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+img {
+  object-fit: cover;
+}
+
+.card {
+  &:hover {
+    display: block;
+    margin: 0 0.5rem;
+    animation: pulse;
+    animation-duration: 2s;
+  }
+}
+
+section+section {
+  margin-top: 1rem;
+}
+
+#ingredients-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 1rem;
+
+  &>section {
+    margin: 1rem;
+  }
+
+  @media (width <=1200px) {
+    flex-direction: column;
+  }
+
+}
+
+#result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.has-text-centered {
+  cursor: default;
+}
+
+.list-item {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

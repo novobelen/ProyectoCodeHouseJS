@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comidas Saludables!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title is-size-1">Comidas Saludables</h1>
+    </header>
+
+    <main id="main" class="animate__animated animate__fadeInLeft">
+      <section>
+        <p class="has-text-centered title is-size-2">
+          ¿Que preferencia desea buscar?
+        </p>
+        <div id="food-preference" class="gallery"></div>
+      </section>
+
+      <div id="ingredients-section">
+        <section
+          id="ingredients"
+          class="is-hidden mb-5 animate__animated animate__fadeIn"
+        >
+          <p class="has-text-centered title is-size-2"></p>
+          <div
+            id="ingredients-question"
+            class="has-text-centered my-5 is-hidden"
+          >
+            <p class="title is-size-3">¿Quieres ver los ingredientes?</p>
+            <button
+              class="button is-primary is-large"
+              onclick="eventClickViewIngredients(true)"
+            >
+              Si
+            </button>
+            <button
+              class="button is-danger is-large"
+              onclick="eventClickViewIngredients(false)"
+            >
+              No
+            </button>
+          </div>
+          <nav id="ingredients-list" class="panel is-primary">
+            <p class="panel-heading is-hidden">
+              Estos son algunos de los ingredientes
+            </p>
+          </nav>
+        </section>
+
+        <section id="result" class="is-hidden">
+          <p class="is-size-2"></p>
+          <div class="buttons">
+            <button
+              id="reset-btn"
+              class="button is-primary mt-4 is-large"
+              type="button"
+            >
+              Reiniciar proceso
+            </button>
+            <button
+              id="toggle-favorite"
+              class="button is-danger mt-4 is-large"
+              type="button"
+            ></button>
+          </div>
+        </section>
+      </div>
+      <section id="favorites">
+        <h3 class="is-size-2 has-text-centered">Favoritos</h3>
+        <div class="favorites-list p-2"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="content has-text-centered">
+        <p>
+          <strong>Comidas Saludables</strong>
+          <a href="https://github.com/novobelen">Belen Novo</a>. El código
+          fuente está bajo la licencia
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. El
+          contenido del sitio web está bajo la licencia
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >CC BY NC SA 4.0</a
+          >.
+          <strong id="current-date"></strong>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
